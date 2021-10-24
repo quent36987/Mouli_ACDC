@@ -10,13 +10,17 @@ from subprocess import *
 import shlex, subprocess
 
 
-f = open('Config/config_login')
+#   Configuration :
+f = open('Config/confs.cf')
 login = f.readlines()[0].rstrip('\n')
 f.close()
-exit
+FichierListSup = 'Config/list.cf'
 
+
+
+#   Fonction :
 def CloneTpSup(nb,dossier):
-    f = open('Config/L3_'+ login,"r")
+    f = open(FichierListSup,"r")
     lines = f.readlines()
     f.close()
     if os.path.exists(dossier):
@@ -32,10 +36,9 @@ def CloneTpSup(nb,dossier):
         except :
             print('oulala err sur : ' + mot)
 
-
 #copie le fichiertest à la fin de  dossier/login/fichier avec tt les login de L3_login
 def Add_line(dossier,fichier,fichiertext):
-    f = open('Config/L3_'+ login,"r")
+    f = open(FichierListSup,"r")
     lines = f.readlines()
     f.close()
     for l in lines:
@@ -61,13 +64,10 @@ def Add_line(dossier,fichier,fichiertext):
 
 
 
+
+# Execution du code :
 if not os.path.exists('TP_Clone'):
     os.mkdir('TP_Clone')
-
-
-
-
-
 dossier = 'TP_Clone/TP3_24_10'
 CloneTpSup(3,dossier)
 fichier = 'list_tools.ml'
