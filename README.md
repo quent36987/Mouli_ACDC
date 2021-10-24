@@ -9,8 +9,8 @@ sudo apt install ocaml-nox
 ```
 
 ## Configuration:
-1. Config/config_log = * login *
-2. Congig/L3_login = * liste login elèves *
+1. Config/config_log = *login*
+2. Congig/L3_login = *liste login elèves*
 
 ## Utilisation:
 ```
