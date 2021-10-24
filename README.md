@@ -1,4 +1,5 @@
 # Mouli_ACDC
+
 ## Commandes installation des packets: 
 ```
 sudo apt update
@@ -8,8 +9,8 @@ sudo apt install ocaml-nox
 ```
 
 ## Configuration:
-1-Config/config_log = login ET
-2-Congig/L3_login = liste login elève
+1. Config/config_log = *login*
+2. Congig/L3_login = *liste login elèves*
 
 ## Utilisation:
 ```
