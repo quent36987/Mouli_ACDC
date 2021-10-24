@@ -13,5 +13,5 @@ sudo apt install ocaml-nox
 
 ## Utilisation:
 ```
-python3 ./script.py
+python3 ./scriptpy.py
 ```
