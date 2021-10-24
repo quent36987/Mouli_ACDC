@@ -1,6 +1,8 @@
 # sudo apt update
 # apt install python3-pip
 # pip install GitPython
+# sudo apt install ocaml-nox
+
 import git
 import os
 import sys
