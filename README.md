@@ -18,7 +18,7 @@ python3 ./scriptpy.py
 ```
 
 ## TODO
-[x] Ajout config
-[ ] Ajout Mouli TP3 histo
-[ ] Gérer les Cas Err exe
+- [x] Ajout config
+- [ ] Ajout Mouli TP3 histo
+- [ ] Gérer les Cas Err exe
 
