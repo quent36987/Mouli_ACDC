@@ -16,7 +16,7 @@ f.close()
 exit
 
 def CloneTpSup(nb,dossier):
-    f = open('L3_'+ login,"r")
+    f = open('Config/L3_'+ login,"r")
     lines = f.readlines()
     f.close()
     if os.path.exists(dossier):
@@ -35,7 +35,7 @@ def CloneTpSup(nb,dossier):
 
 #copie le fichiertest à la fin de  dossier/login/fichier avec tt les login de L3_login
 def Add_line(dossier,fichier,fichiertext):
-    f = open('L3_'+ login,"r")
+    f = open('Config/L3_'+ login,"r")
     lines = f.readlines()
     f.close()
     for l in lines:
