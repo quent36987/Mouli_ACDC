@@ -48,7 +48,7 @@ def Add_line(dossier,fichier):
         loginSup = l.rstrip('\n')
         fichierSup = dossier + '/' +  loginSup + '/' + fichier
         #ouverture du fichier ou se trouve les lignes a ajouter
-        ftext = open(DosMouli + str(Path(fichier).with_suffix("")),"r")
+        ftext = open(DosMouli + fichier,"r")
         linestext = ftext.readlines()
         ftext.close()
         if not os.path.exists(fichierSup):
