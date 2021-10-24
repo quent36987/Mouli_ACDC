@@ -11,7 +11,7 @@ let v1 = (if (nth2 5 [1; 2; 3; 4; 5] = 0) then 1 else 0) +
  (if (nth 0 ['a'; 'b'; 'c'] = 'a') then 1 else 0) +
  (if (nth2 (-5) [] = 0) then 1 else 0) in
 if v1 = 3 then
-	print_string "[nth]        Juste \n"
+	print_string "[nth]         Juste \n"
 else begin
 	print_string "[nth]   Faux : "; 
 	print_int v1 ;
@@ -23,7 +23,7 @@ let v1 = (if (is_pos []) then 1 else 0) +
  (if not( is_pos [5; 8; 8; 1; 0; -1]) then 1 else 0) +
  (if not( is_pos [5; 8; -2; 1; 0; -1]) then 1 else 0) in
 if v1 = 4 then
-	print_string "[is_pos]    Juste \n"
+	print_string "[is_pos]      Juste \n"
 else begin
 	print_string "[is_pos]   Faux : "; 
 	print_int v1 ;
@@ -72,9 +72,9 @@ let v1 =
  (  if (  put_list2 0 10 [1; 1; 1; 1] = [1; 1; 1; 1]   ) then 1 else 0) +
  (  if (   put_list2 0 (-10) [1; 1; 1; 1] = []  ) then 1 else 0)  in
 if v1 = 3 then
-	print_string "[put_list2]    Juste \n"
+	print_string "[put_list]    Juste \n"
 else begin
-	print_string "[put_list2]    Faux : "; 
+	print_string "[put_list]    Faux : "; 
 	print_int v1 ;
 	print_string "/3 \n" end;;
 
