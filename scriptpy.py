@@ -7,7 +7,11 @@ import sys
 from subprocess import *
 import shlex, subprocess
 
-login = 'quentin.goujon'
+
+f = open('config')
+login = f.readlines()[0].rstrip('\n')
+f.close()
+exit
 
 def CloneTpSup(nb,dossier):
     f = open('L3_'+ login,"r")
@@ -57,6 +61,10 @@ def Add_line(dossier,fichier,fichiertext):
 
 if not os.path.exists('TP_Clone'):
     os.mkdir('TP_Clone')
+
+
+
+
 
 dossier = 'TP_Clone/TP3_24_10'
 CloneTpSup(3,dossier)
