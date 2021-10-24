@@ -5,6 +5,8 @@
 
 import git
 import os
+from pathlib import Path
+from typing import Union
 import sys
 from subprocess import *
 import shlex, subprocess
@@ -15,6 +17,7 @@ f = open('Config/confs.cf')
 login = f.readlines()[0].rstrip('\n')
 f.close()
 FichierListSup = 'Config/list.cf'
+DosMouli = 'Moulinette/'
 
 
 
@@ -32,12 +35,12 @@ def CloneTpSup(nb,dossier):
         try:
             git.Repo.clone_from(''+ login +'@git.cri.epita.fr:p/2026-s1-caml/tp'+ str(nb) +'-' + mot,dossier + '/' + mot)
         except KeyboardInterrupt :
-            exit
+            quit()
         except :
             print('oulala err sur : ' + mot)
 
 #copie le fichiertest à la fin de  dossier/login/fichier avec tt les login de L3_login
-def Add_line(dossier,fichier,fichiertext):
+def Add_line(dossier,fichier):
     f = open(FichierListSup,"r")
     lines = f.readlines()
     f.close()
@@ -45,7 +48,7 @@ def Add_line(dossier,fichier,fichiertext):
         loginSup = l.rstrip('\n')
         fichierSup = dossier + '/' +  loginSup + '/' + fichier
         #ouverture du fichier ou se trouve les lignes a ajouter
-        ftext = open(fichiertext,"r")
+        ftext = open(DosMouli + str(Path(fichier).with_suffix("")),"r")
         linestext = ftext.readlines()
         ftext.close()
         if not os.path.exists(fichierSup):
@@ -61,6 +64,8 @@ def Add_line(dossier,fichier,fichiertext):
             print ('WARRNING SUR : '+ loginSup)
         if (var.returncode == 2):
             print ('ERR SUR : '+ loginSup)
+        if (var.returncode == 1):
+            print ('VALIDE : '+ loginSup)
 
 
 
@@ -69,10 +74,9 @@ def Add_line(dossier,fichier,fichiertext):
 if not os.path.exists('TP_Clone'):
     os.mkdir('TP_Clone')
 dossier = 'TP_Clone/TP3_24_10'
-CloneTpSup(3,dossier)
+#CloneTpSup(3,dossier)
 fichier = 'list_tools.ml'
-fichiter_text = 'text1'
-Add_line(dossier,fichier,fichiter_text)
+Add_line(dossier,fichier)
 
 #fichier = 'fractals.ml'
 #fichiter_text = 'text2'
