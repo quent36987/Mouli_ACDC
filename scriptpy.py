@@ -10,7 +10,7 @@ from subprocess import *
 import shlex, subprocess
 
 
-f = open('Config/config_log')
+f = open('Config/config_login')
 login = f.readlines()[0].rstrip('\n')
 f.close()
 exit
