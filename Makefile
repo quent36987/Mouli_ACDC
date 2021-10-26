@@ -1,6 +1,7 @@
 SRC=src/scriptpy.py
+DOSSIER=TP3_Test
 
-all : setup clone add
+all : clean clone add
 
 setup:
 	sudo apt update
@@ -9,10 +10,17 @@ setup:
 	sudo apt install ocaml-nox
 
 clone:
-	python3 ./$(SRC) clone 3 TP_Clone/TP3_26_10
+	python3 ./$(SRC) clone 3 TP_Clone/$(DOSSIER)
 
 add:
-	python3 ./$(SRC) add_line TP_Clone/TP3_26_10 list_tools.ml
-	python3 ./$(SRC) add_line TP_Clone/TP3_26_10 histo.ml
-	python3 ./$(SRC) add_line TP_Clone/TP3_26_10 matrix_patterns.ml
+	python3 ./$(SRC) add_line TP_Clone/$(DOSSIER)  list_tools.ml
+	python3 ./$(SRC) add_line TP_Clone/$(DOSSIER)  histo.ml
+	python3 ./$(SRC) add_line TP_Clone/$(DOSSIER)  matrix_patterns.ml
+
+try:
+
+
+clean:
+	rm -r -f $(DOSSIER)
+
 

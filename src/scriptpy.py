@@ -74,14 +74,9 @@ def Add_line(dossier,fichier):
         for lt in linestext:
             fSup.write(lt)
         fSup.close()
-        #var = os.system("ocamlc -o " + dossier + '/' +  loginSup + "/exe_" + loginSup + " " + fichierSup)
-        var = subprocess.run("ocamlc -o " + dossier + '/' +  loginSup + "/exe_"   + str(Path(fichier).with_suffix("")) + '_' + loginSup + " " + fichierSup, shell=True,stdout=None, stderr=None,capture_output=True)
-        if (var.returncode == 0):
-            print ('WARRNING SUR : '+ loginSup)
-        if (var.returncode == 2):
-            print ('ERR SUR : '+ loginSup)
-        if (var.returncode == 1):
-            print ('VALIDE : '+ loginSup)
+        os.system("ocaml "+ fichierSup + " > " + dossier + '/' +  loginSup + '/exe_' + fichier + ".txt")
+        #subprocess.run("ocamlc -o " + dossier + '/' +  loginSup + "/exe_"   + str(Path(fichier).with_suffix("")) + '_' + loginSup + " " + fichierSup, shell=True,stdout=None, stderr=None,capture_output=True)
+        
 
 
 
