@@ -121,10 +121,10 @@ else begin
 
 
 
-let v1 = 
- (  if (   put_cell 0(0,0)  [[8;9];[5;7];[1;5]] = [[0; 9]; [5; 7]; [1; 5]] ) then 1 else 0) +
- (  if (  put_cell 45(2,1)  [[8;9];[5;7];[1;5]] = [[8; 9]; [5; 7]; [1; 45]]) then 1 else 0) +
- (  if (  put_cell 96 (5,0) [[8;9];[5;7];[1;5]] = [[8; 9]; [5; 7]; [1; 5]] ) then 1 else 0)  in
+let v1 = let put_cell2 a (x, y) board   = try put_cell a (x, y) board  with e -> [] in
+ (  if (   put_cell2 0 (0,0)  [[8;9];[5;7];[1;5]] = [[0; 9]; [5; 7]; [1; 5]] ) then 1 else 0) +
+ (  if (  put_cell2 45(2,1)  [[8;9];[5;7];[1;5]] = [[8; 9]; [5; 7]; [1; 45]]) then 1 else 0) +
+ (  if (  put_cell2 96 (5,0) [[8;9];[5;7];[1;5]] = [[8; 9]; [5; 7]; [1; 5]] ) then 1 else 0)  in
 if v1 = 3 then
 	print_string "[put_cell]    Juste \n"
 else begin
