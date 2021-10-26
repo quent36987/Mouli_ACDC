@@ -77,6 +77,10 @@ dossier = 'TP_Clone/TP3_24_10'
 #CloneTpSup(3,dossier)
 fichier = 'list_tools.ml'
 Add_line(dossier,fichier)
+fichier = 'histo.ml'
+Add_line(dossier,fichier)
+fichier = 'matrix_patterns.ml'
+Add_line(dossier,fichier)
 
 #fichier = 'fractals.ml'
 #fichiter_text = 'text2'

@@ -1,4 +1,5 @@
 # Mouli_ACDC
+ptit test de moulinette avec un script python dégueu ^^
 
 ## Commandes installation des packets: 
 ```
