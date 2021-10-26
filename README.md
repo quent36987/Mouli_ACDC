@@ -12,7 +12,7 @@ make setup
 
 ## Utilisation:
 ```
-make all
+make all DOSSIER='ce_que_tu_veux'
 ```
 
 ## TODO
