@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # sudo apt update
 # apt install python3-pip
 # pip install GitPython
@@ -10,6 +11,7 @@ from typing import Union
 import sys
 from subprocess import *
 import shlex, subprocess
+import click
 
 
 #   Configuration :
@@ -19,9 +21,20 @@ f.close()
 FichierListSup = 'Config/list.cf'
 DosMouli = 'Moulinette/'
 
+if not os.path.exists('TP_Clone'):
+    os.mkdir('TP_Clone')
+
+
+
+@click.group()
+def messages():
+  pass
 
 
 #   Fonction :
+@click.command("clone")
+@click.argument("nb", required=True)
+@click.argument("dossier", required=True)
 def CloneTpSup(nb,dossier):
     f = open(FichierListSup,"r")
     lines = f.readlines()
@@ -40,6 +53,9 @@ def CloneTpSup(nb,dossier):
             print('oulala err sur : ' + mot)
 
 #copie le fichiertest à la fin de  dossier/login/fichier avec tt les login de L3_login
+@click.command("add_line")
+@click.argument("dossier", required=True)
+@click.argument("fichier", required=True)
 def Add_line(dossier,fichier):
     f = open(FichierListSup,"r")
     lines = f.readlines()
@@ -69,20 +85,8 @@ def Add_line(dossier,fichier):
 
 
 
+messages.add_command(Add_line)
+messages.add_command(CloneTpSup)
 
-# Execution du code :
-if not os.path.exists('TP_Clone'):
-    os.mkdir('TP_Clone')
-dossier = 'TP_Clone/TP3_24_10'
-#CloneTpSup(3,dossier)
-fichier = 'list_tools.ml'
-Add_line(dossier,fichier)
-fichier = 'histo.ml'
-Add_line(dossier,fichier)
-fichier = 'matrix_patterns.ml'
-Add_line(dossier,fichier)
-
-#fichier = 'fractals.ml'
-#fichiter_text = 'text2'
-#Add_line(dossier,fichier,fichiter_text)
-
+if __name__ == '__main__':
+   messages()

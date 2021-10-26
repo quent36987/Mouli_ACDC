@@ -1,3 +1,5 @@
+
+(*TEST SUITE*)
 let mat_cross2 a b c    = try mat_cross a b c  with e -> [] in
 let v1 = 
  (  if (   mat_cross2 3 '*' '-'= [['-'; '*'; '-']; ['*'; '*'; '*']; ['-'; '*'; '-']]  ) then 1 else 0) +

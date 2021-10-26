@@ -3,10 +3,7 @@ ptit test de moulinette avec un script python dégueu ^^
 
 ## Commandes installation des packets: 
 ```
-sudo apt update
-apt install python3-pip
-pip install GitPython
-sudo apt install ocaml-nox
+make setup
 ```
 
 ## Configuration:
@@ -15,7 +12,7 @@ sudo apt install ocaml-nox
 
 ## Utilisation:
 ```
-python3 ./scriptpy.py
+make all
 ```
 
 ## TODO

@@ -1,3 +1,5 @@
+
+(*TEST SUITE*)
 let add_occ2 i hist   = try add_occ i hist  with e -> [] in
 let v1 = 
  (  if (   add_occ2 (-1) [0; 0; 2; 5; 0; 1; 1; 0] = []  ) then 1 else 0) +
